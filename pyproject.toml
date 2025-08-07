@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "guess_glottocode"
+version = "0.1.0"
+description = "This helper package guesses the Glottocode of a language given the language name (and location)."
+authors = ["Peter Ranacher <peter.ranacher@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.4"
+geopandas = "^1.1.1"
+shapely = "^2.1.1"
+wptools = "^0.4.17"
+pymediawiki = "^0.7.5"
+anthropic = "^0.60.0"
+pandas = "^2.3.1"
+google = "^3.0.0"
+platformdirs = "^4.3.8"
+keyring = "^25.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

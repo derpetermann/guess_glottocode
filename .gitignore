@@ -1,0 +1,35 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Distribution / packaging
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+
+# PyCharm / JetBrains IDE
+.idea/
+
+# VS Code settings (optional)
+.vscode/
+
+# Logs and local environment
+*.log
+.env
+.env.*
+
+# Poetry lock file (optional - include if you want reproducible builds)
+# poetry.lock
+
+# pytest cache
+.pytest_cache/
+
+# mypy, coverage, and test artifacts
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
