@@ -216,7 +216,7 @@ def process_location(location: GeometryInput) -> gpd.GeoSeries:
     else:
         raise TypeError(
             f"Unsupported location type: {type(location)}. "
-            "Expected (lat, lon) tuple, Point, Polygon, or GeoSeries."
+            "Expected (lon, lat) tuple, Point, Polygon, or GeoSeries."
         )
 
 def find_ancestors(glottocode: str, relatives: pd.DataFrame) -> List[str]:
