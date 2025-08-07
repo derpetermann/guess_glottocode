@@ -33,8 +33,9 @@ verify = verify_glottocode_guess(language, glottocode_gemini)
 # if the filter is too narrow too few candidates without the relevant one. The query might be empty.
 
 # Write a brief how too for James
-# Provide as package
 # test package on different venv
 # Readme file
 # Write Robert about using their
 # Suppress mediawiki output
+# Media WIKI restrict to first hit, pack [0] into function
+
