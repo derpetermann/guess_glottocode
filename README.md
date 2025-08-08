@@ -2,7 +2,7 @@
 
 Guess the Glottocode* for a language using either a Wikipedia query or a large language model.
 
-*Glottocodes are unique identifiers for languages maintained by [Glottolog](https://glottolog.org).
+\* Glottocodes are unique identifiers for languages maintained by [Glottolog](https://glottolog.org).
 
 ## Features
 
@@ -25,7 +25,7 @@ pip install guess_glottocode
 
 ## Useful references:
 
-- [Glottolog](https://glottolog.org) - Language identifier database  
+- [Glottolog](https://glottolog.org) - Open language catalog, maintains Glottocodes  
 - [Google Gemini](https://aistudio.google.com/apikey) - API key setup for Gemini  
 - [Anthropic](https://console.anthropic.com/settings/keys) - API key setup for Anthropic  
 - [GeoPandas Documentation](https://geopandas.org/en/stable/) - Geospatial data handling in Python
