@@ -112,37 +112,33 @@ def parse_glottocode(sites: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return [s for s in sites if s.get("glottocode")]
 
 
-def get_relevant_glottocodes(
+def get_most_relevant_glottocode(
     sites: List[Dict[str, Any]],
-    k_max: int = 1,
     only_primary: bool = True
-) -> List[str]:
+) -> str | None:
     """
-    Extract glottocodes from the top-k most relevant Wikipedia pages.
+    Extract glottocode from the most relevant Wikipedia page. If no Glottocode is found,
+    this function returns None.
 
     Args:
         sites (List[Dict[str, Any]]): A list of Wikipedia page dictionaries, each
             expected to contain a 'glottocode' key with a list of dicts, where each
             dict has a 'code' (str) and 'primary' (bool).
-        k_max (int): Maximum number of top-ranked pages to consider.
         only_primary (bool): If True, include only glottocodes marked as primary.
 
     Returns:
         List[str]: A list of glottocode strings from the top-k relevant pages.
     """
-    codes = []
-    for s in sites[:k_max]:
-        for g in s.get("glottocode", []):
-            if g["primary"] or not only_primary:
-                codes.append(g["code"])
-    return codes
-
+    for site in sites:
+        for code_info in site.get("glottocode", []):
+            if code_info["primary"] or not only_primary:
+                return code_info["code"]
+    return None
 
 def guess_glottocode(
     language: str,
-    k_max: int = 1,
     only_primary: bool = True
-) -> List[str]:
+) -> str | None:
     """
     Guess glottocode(s) for a language using Wikipedia data.
 
@@ -151,15 +147,14 @@ def guess_glottocode(
     2. Retrieve info boxes from these pages.
     3. Filter pages containing glottocode-related info.
     4. Extract glottocodes from those info boxes.
-    5. Return glottocodes from the top-k relevant pages.
+    5. Return glottocodes from the most relevant page.
 
     Args:
         language (str): Name of the language to query.
-        k_max (int): Maximum number of top-ranked pages to consider.
         only_primary (bool): Whether to include only primary glottocodes.
 
     Returns:
-        List[str]: List of guessed glottocodes, possibly empty if none found.
+        str: List of guessed glottocodes, possibly empty if none found.
     """
     language = language.strip().capitalize()
 
@@ -179,8 +174,7 @@ def guess_glottocode(
     if not sites_with_glottocode:
         return []
 
-    return get_relevant_glottocodes(
+    return get_most_relevant_glottocode(
         sites_with_glottocode,
-        k_max=k_max,
         only_primary=only_primary
     )
