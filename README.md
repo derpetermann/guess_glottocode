@@ -18,11 +18,6 @@ You can install the latest version directly from GitHub:
 pip install git+https://github.com/derpetermann/guess_glottocode.git
 ```
 
-Or install via PyPI (coming soon):
-```bash
-pip install guess_glottocode
-```
-
 ## Useful references:
 
 - [Glottolog](https://glottolog.org) - Open language catalog, maintains Glottocodes  
