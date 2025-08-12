@@ -88,7 +88,7 @@ glottocode_gemini = llm.guess_glottocode(language="French",
                                          api="gemini")
 ```
 
-The `guess_glottocode` function creates a buffer - 500 km in this example - around the given language location, in this example specified as a pair of longitude and latitude coordinates. It then filters all Glottocodes to find suitable candidates, here focusing on the language level while excluding Glottocodes of dialects or language families. After that, `llm.guess_glottocode` sends a prompt to an API - Gemini in this case - to select the best matching Glottocode from the candidate list.
+The `geo_filter_glottocodes` function creates a buffer — 500 km in this example — around the given language location, in this example specified as a pair of longitude and latitude coordinates. It then filters all Glottocodes to find suitable candidates, here focusing on the language level while excluding Glottocodes of dialects or language families. After that, `llm.guess_glottocode` sends a prompt to an API — Gemini in this case — to select the best matching Glottocode from the candidate list.
 
 ### Suitable geographic filters 
 

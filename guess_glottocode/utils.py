@@ -327,7 +327,7 @@ def check_name(language: str, name_glottolog: str, alt_names_glottolog: Dict[str
     return False
 
 
-def verify_glottocode_guess(language: str, glottocode: str) -> bool:
+def verify_glottocode_guess(language: str, glottocode: str | None) -> bool:
     """
     Verify whether a guessed Glottocode corresponds to a given language name
     using metadata scraped from Glottolog.
@@ -340,6 +340,9 @@ def verify_glottocode_guess(language: str, glottocode: str) -> bool:
         bool: True if the name or one of its alternate names matches the input language.
               False if the Glottocode is invalid or verification fails.
     """
+    if glottocode is None:
+        return False
+
     glottolog_data = get_glottolog()
     url_header = "https://raw.githubusercontent.com/glottolog/glottolog/master/languoids/tree"
 
