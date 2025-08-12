@@ -79,6 +79,9 @@ We found that current LLMs still struggle to correctly identify the Glottocode f
 
 
 ```python
+import guess_glottocode.llm as llm
+from  guess_glottocode.utils import geo_filter_glottocodes
+
 candidate_glottocodes = geo_filter_glottocodes(language_location=(2.5, 48.4),
                                                buffer=500,
                                                level="language")
